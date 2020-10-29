@@ -9,7 +9,7 @@ use App\Http\Requests\AnnouncementRequest;
 class HomeController extends Controller
 {
     public function __construct()
-    {
+    {   
         $this->middleware('auth');
     }
     public function index()
@@ -27,6 +27,7 @@ class HomeController extends Controller
         $a = new Announcement();
         $a->title = $request->input('title');
         $a->body = $request->input('body');
+        $a->category_id = $request->input('category');
         $a->save();
 
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
