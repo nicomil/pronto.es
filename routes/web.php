@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class,'index'])->name('home');
-Route::get('/announcement/new', [App\Http\Controllers\HomeController::class,'newAnnouncement'])->name('announcement.new');
-Route::post('/announcement/create', [App\Http\Controllers\HomeController::class,'createAnnouncement'])->name('announcement.create');
+Route::get('/', [PublicController::class,'index'])->name('home');
+Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
+Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');

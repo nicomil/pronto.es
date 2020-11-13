@@ -19,10 +19,12 @@
 <body>
     <div id="app">
         @include('layouts._nav')
-            
-            <main class="container py-4">
-                @yield('content')
-            </main>
+        @if(session('announcement.create.success'))
+            <div class="alert alert-success">{{session('announcement.create.success')}}</div>
+        @endif
+        <main>
+            @yield('content')
+        </main>
         </div>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>

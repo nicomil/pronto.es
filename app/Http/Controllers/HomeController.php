@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Announcement;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
@@ -11,10 +12,6 @@ class HomeController extends Controller
     public function __construct()
     {   
         $this->middleware('auth');
-    }
-    public function index()
-    {
-        return view('welcome');
     }
 
     public function newAnnouncement()
@@ -28,6 +25,7 @@ class HomeController extends Controller
         $a->title = $request->input('title');
         $a->body = $request->input('body');
         $a->category_id = $request->input('category');
+        $a->user_id = Auth::id();
         $a->save();
 
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
