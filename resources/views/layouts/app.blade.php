@@ -22,6 +22,9 @@
         @if(session('announcement.create.success'))
             <div class="alert alert-success">{{session('announcement.create.success')}}</div>
         @endif
+        @if(session('access.denied.revisor.only'))
+            <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+        @endif
         <main>
             @yield('content')
         </main>
