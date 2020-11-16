@@ -22,4 +22,6 @@ Route::post('/announcement/create', [HomeController::class,'createAnnouncement']
 
 Route::get('/category/{name}/{id}/announcements',[PublicController::class,'announcementsByCategory'])->name('category.announcements');
 
-Route::get('/revisor',[RevisorController::class,'index'] );
+Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
+Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.announcement.accept');
+Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.announcement.reject');
