@@ -17,18 +17,23 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         Categories
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         @foreach($categories as $category)
-                        <a class="dropdown-item" href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
+                        <a class="dropdown-item"
+                            href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
                             {{$category->name}}
                         </a>
                         @endforeach
                     </div>
                 </li>
-            </ul>
+                @include('layouts._locale',["lang"=>'es','nation'=>'es'])  
+                @include('layouts._locale',["lang"=>'en','nation'=>'gb'])  
+                @include('layouts._locale',["lang"=>'it','nation'=>'it'])  
+        
+            </ul
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
@@ -46,7 +51,8 @@
                 @if(Auth::user()->is_revisor)
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('revisor.home') }}">
-                        Revisor <span class="badge badge-pill badge-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
+                        Revisor <span
+                            class="badge badge-pill badge-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span>
                     </a>
                 </li>
                 @endif
@@ -57,7 +63,8 @@
                     </a>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
 
@@ -67,7 +74,7 @@
                     </div>
                 </li>
                 @endguest
-                
+
             </ul>
         </div>
     </div>

@@ -26,4 +26,10 @@ class PublicController extends Controller
                                     ->paginate(2);
         return view('announcements',compact('category','announcements'));
     }
+
+    public function locale($locale)
+    {
+        session()->put('locale',$locale);
+        return redirect()->back();
+    }
 }
