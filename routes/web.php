@@ -19,6 +19,7 @@ use App\Http\Controllers\RevisorController;
 Route::get('/', [PublicController::class,'index'])->name('home');
 Route::get('/announcement/new', [HomeController::class,'newAnnouncement'])->name('announcement.new');
 Route::post('/announcement/create', [HomeController::class,'createAnnouncement'])->name('announcement.create');
+Route::post('/announcement/images/upload', [HomeController::class,'uploadImages'])->name('announcement.images.upload');
 
 Route::get('/category/{name}/{id}/announcements',[PublicController::class,'announcementsByCategory'])->name('category.announcements');
 
