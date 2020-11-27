@@ -6,7 +6,7 @@
         <div class='col-12'>
             <div class="card">
                 <div class="card-header">
-                    Anuncion #{{$announcement->id}}
+                    Anuncio #{{$announcement->id}}
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -43,10 +43,9 @@
                             <h3>Imagenes</h3>
                         </div>
                         <div class="col-md-9">
-                            <img src="https://via.placeholder.com/150" alt="">
-                            <img src="https://via.placeholder.com/150" alt="">
-                            <img src="https://via.placeholder.com/150" alt="">
-                            <img src="https://via.placeholder.com/150" alt="">
+                           @foreach ($announcement->images as $image)
+                               <img src="{{Storage::url($image->file)}}" alt="" class="img-fluid">
+                           @endforeach
                         </div>
                     </div>
                 </div>

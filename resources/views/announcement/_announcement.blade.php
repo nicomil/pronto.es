@@ -4,8 +4,11 @@
             <div class="card-header">
                 {{$announcement->title}}
             </div>
-            <div class="car-body d-flex">
-                <img src="https://via.placeholder.com/150" alt="">
+            <div class="car-body d-flex flex-column">
+                <div>
+                    @include('announcement._announcement_carousel')
+                </div>
+               
                 <p>
                 {{$announcement->body}}
                 </p>
