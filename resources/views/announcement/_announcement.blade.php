@@ -14,7 +14,11 @@
                 </p>
             </div>
             <div class="card-footer d-flex justify-content-between">
-            <strong>Categoria: <a href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a></strong>
+            <div>
+                <strong>Precio: {{$announcement->price}}</strong>
+                <br>
+                <strong>Categoria: <a href="{{route('category.announcements',['name'=>$announcement->category->name,'id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a></strong>
+            </div>
             <i>{{$announcement->created_at->format('d/m/Y')}} - {{$announcement->user->name}}</i>
             </div>
         </div>

@@ -19,28 +19,34 @@
                                 >{{$category->name}}</option>
                             @endforeach
                         </select>
-                      </div>
+                    </div>
                     <div class="form-group">
-                        <label for="announcementeName">Titulo</label>
-                        <input type="text" class="form-control" id="announcementeName" aria-describedby="emailHelp"
-                    name="title" value="{{old("title")}}">
+                        <label for="announcementName">Titulo</label>
+                        <input type="text" class="form-control" id="announcementName" aria-describedby="titleHelp" name="title" value="{{old("title")}}">
                         @error('title')
-                        <small id="emailHelp" class="form-text" style="color:red;">{{ $message }}</small>
+                        <small id="titleHelp" class="form-text" style="color:red;">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="announcementeBody">Anuncio</label>
-                        <textarea class="form-control" name="body" id="announcementeBody" cols="30"
-                            rows="10">{{old("body")}}</textarea>
+                        <label for="announcementBody">Anuncio</label>
+                        <textarea class="form-control" name="body" id="announcementBody" cols="30"
+                            rows="10" aria-describedby="bodyHelp">{{old("body")}}</textarea>
                         @error('body')
-                            <small id="emailHelp" class="form-text" style="color:red;">{{ $message }}</small>
+                            <small id="bodyHelp" class="form-text" style="color:red;">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="announcementPrice">Precio</label>
+                        <input type="number" step="0.01" class="form-control" id="announcementPrice" aria-describedby="priceHelp" name="price" value="{{old("price")}}">
+                        @error('price')
+                        <small id="priceHelp" class="form-text" style="color:red;">{{ $message }}</small>
                         @enderror
                     </div>
                     <div class="form-group">
                         <label for="announcementeImages">Imagenes</label>
                         <div class="dropzone" id="drophere"></div>
                         @error('images')
-                            <small id="emailHelp" class="form-text" style="color:red;">{{ $message }}</small>
+                            <small id="Help" class="form-text" style="color:red;">{{ $message }}</small>
                         @enderror
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
