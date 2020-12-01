@@ -1,5 +1,5 @@
-<div class="row my-3">
-    <div class="col-12 col-md-8 offset-md-2">
+
+    <div class="col-12 col-md-5">
         <div class="card">
             <div class="card-header">
                 {{$announcement->title}}
@@ -19,4 +19,3 @@
             </div>
         </div>
     </div>
-</div>

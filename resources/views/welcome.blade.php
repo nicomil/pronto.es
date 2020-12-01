@@ -6,8 +6,10 @@
         <h1>{{__('ui.welcome')}}</h1>
         </div>
     </div>
+    <div class="row my-3">
     @foreach($announcements as $announcement)
         @include('announcement._announcement')
     @endforeach
+    </div>
 </div>
 @endsection
