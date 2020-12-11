@@ -1,5 +1,5 @@
 
-    <div class="col-12 col-md-5">
+    <div class="col-12 col-md-5 offset-md-1">
         <div class="card">
             <div class="card-header">
                 {{$announcement->title}}
@@ -8,8 +8,7 @@
                 <div>
                     @include('announcement._announcement_carousel')
                 </div>
-               
-                <p>
+                <p class="p-4">
                 {{$announcement->body}}
                 </p>
             </div>
