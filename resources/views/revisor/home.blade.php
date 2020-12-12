@@ -45,6 +45,16 @@
                         <div class="col-md-9">
                            @foreach ($announcement->images as $image)
                                <img src="{{$image->getUrl(300,150)}}" alt="" class="img-fluid">
+                               <div>Adult: {{$image->adult}}</div>
+                               <div>Racismo: {{$image->racy}}</div>
+                               <div>Medical: {{$image->medical}}</div>
+                               <div>Violencia: {{$image->violence}}</div>
+                               <div>Spoof: {{$image->spoof}}</div>
+                               <ul>
+                                   @foreach ($image->labels as $label)
+                                        <li>{{$label}}</li>
+                                   @endforeach
+                               </ul>
                            @endforeach
                         </div>
                     </div>
