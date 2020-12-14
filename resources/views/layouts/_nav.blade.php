@@ -16,15 +16,15 @@
                     <a class="nav-link" href="{{ route('announcement.new') }}">Nuevo Anuncio</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-capitalize" href="#" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Categories
+                        {{__("categorias")}}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         @foreach($categories as $category)
                         <a class="dropdown-item"
                             href="{{route('category.announcements',['name'=>$category->name,'id'=>$category->id])}}">
-                            {{$category->name}}
+                            {{__("{$category->name}")}}
                         </a>
                         @endforeach
                     </div>

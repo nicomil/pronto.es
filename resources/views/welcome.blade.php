@@ -3,7 +3,8 @@
 <div class='container'>
     <div class='row'>
         <div class='col-12 text-center'>
-        <h1>{{__('ui.welcome')}}</h1>
+        <h1>{{__('Bienvenidos a Pronto.es')}}</h1>
+        <h2>{{__("Lorem ipsum dolor sit amet consectetur, adipisicing elit.")}}</h2>
         </div>
     </div>
     <div class="row my-3">
