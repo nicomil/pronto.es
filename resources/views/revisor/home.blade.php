@@ -51,9 +51,11 @@
                                <div>Violencia: {{$image->violence}}</div>
                                <div>Spoof: {{$image->spoof}}</div>
                                <ul>
+                                @if($image->labels)
                                    @foreach ($image->labels as $label)
                                         <li>{{$label}}</li>
                                    @endforeach
+                                @endif
                                </ul>
                            @endforeach
                         </div>
