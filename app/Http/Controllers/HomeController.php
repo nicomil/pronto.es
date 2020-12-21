@@ -57,9 +57,9 @@ class HomeController extends Controller
             // dispatch(new GoogleVisionSafeSearchImage($i->id));
             // dispatch(new GoogleVisionLabelImage($i->id));
             Bus::chain([
-                new GoogleVisionSafeSearchImage($i->id),
-                new GoogleVisionLabelImage($i->id),
-                new GoogleVisionRemoveFaces($i->id),
+                // new GoogleVisionSafeSearchImage($i->id),
+                // new GoogleVisionLabelImage($i->id),
+                // new GoogleVisionRemoveFaces($i->id),
                 new ResizeImage($newFilePath,300,150)
             ])->dispatch();
 
@@ -111,6 +111,7 @@ class HomeController extends Controller
                 'size' => Storage::size($image)
             ];
         }
+        
 
         return response()->json($data);
     }
