@@ -28,5 +28,5 @@ Route::get('/category/{name}/{id}/announcements',[PublicController::class,'annou
 Route::get('/revisor',[RevisorController::class,'index'] )->name('revisor.home');
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.announcement.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.announcement.reject');
-
+Route::get('/search', [HomeController::class,'search'])->name('search');
 Route::post('/locale/{locale}',[PublicController::class,'locale'])->name('locale');

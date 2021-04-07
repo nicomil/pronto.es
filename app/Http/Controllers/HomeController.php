@@ -22,6 +22,16 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+
+public function search(Request $request)
+{
+    $q = $request->input('q');
+    $announcements = Announcement::search($q)
+        ->where('is_accepted', null)
+        ->get();
+    return view('search_results', compact('q', 'announcements'));
+} 
+
     public function newAnnouncement(Request $request)
     {   $uniqueSecret = $request->old('uniqueSecret',base_convert(sha1(uniqid(mt_rand())),16,36));
         return view('announcement.new',compact('uniqueSecret'));
